@@ -11,10 +11,10 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-    - name: Init Node.js
     - uses: actions/setup-node@v1
       with:
         node-version: '12.18'
+    - name: Init Node.js
 
     - uses: actions/checkout@master
     - name: Install dependencies
