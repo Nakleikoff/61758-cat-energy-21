@@ -7,7 +7,7 @@ on:
 
 name: Project check
 jobs:
-  checks:
+  check:
     runs-on: ubuntu-latest
     steps:
     - name: Init Node
@@ -22,6 +22,6 @@ jobs:
       run: |
         npm install
 
-    - name: Run tests
+    - name: Run checks
       run: |
         npm test
