@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Алексей Е.](http://up.ha.local/adaptive/21/user/61758).
-* Наставник: `Известно Мне`.
+* Наставник: `Известно Мне Одному`.
 
 ---
 
