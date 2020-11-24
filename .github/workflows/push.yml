@@ -11,8 +11,8 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+    - name: Init Node.js
     - uses: actions/setup-node@v1
-    - name: Setup Node.js
       with:
         node-version: '12.18'
 
