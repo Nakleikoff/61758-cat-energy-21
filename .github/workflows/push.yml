@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: '*'
+
+name: Test
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.18'
+
+    - uses: actions/checkout@master
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: Test
+      run: |
+        npm test

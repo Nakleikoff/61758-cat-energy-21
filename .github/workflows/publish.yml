@@ -1,0 +1,35 @@
+name: publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    timeout-minutes:
+      10
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: install dependencies
+        env:
+          NPM_TOKEN_GITHUB: ${{ secrets.NPM_TOKEN_GITHUB }}
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN_GITHUB}" > $HOME/.npmrc
+          npm install
+      - name: publish package
+        run: |
+          npm publish
